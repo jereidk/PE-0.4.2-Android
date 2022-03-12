@@ -900,7 +900,16 @@ class PlayState extends MusicBeatState
 		iconP2.visible = !ClientPrefs.hideHud;
 		add(iconP2);
 		reloadHealthBarColors();
-
+       
+        var suscredits:FlxText = new FlxText(4,healthBarBG.y - 20,0,("Ported by Jere"), 4);
+        suscredits.scrollFactor.set();
+        suscredits.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        suscredits.borderColor = FlxColor.BLACK;
+        suscredits.borderSize = 0.9;
+        suscredits.borderStyle = FlxTextBorderStyle.OUTLINE;
+        suscredits.cameras = [camHUD];
+        add( suscredits);
+      
 		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
